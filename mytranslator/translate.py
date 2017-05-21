@@ -21,9 +21,9 @@ def getHtml(type=True, text='English'):
 
 def main():
 
-    flag = raw_input("英文转汉语输入1，汉语转英文输入0：".encode('gbk')).encode('utf8')
+    flag = input("英文转汉语输入1，汉语转英文输入0：".encode('gbk')).encode('utf8')
     # 这里使用encode为gbk的方式是为了在Windows的DOS界面下不发生乱码的情况
-    querytext = raw_input("请输入您想查询的内容\n".encode('gbk')).decode('gbk')
+    querytext = input("请输入您想查询的内容\n".encode('gbk')).decode('gbk')
     if flag == 1:
         data = getHtml(type=False, text=querytext)
     else:
@@ -31,8 +31,8 @@ def main():
     data = json.loads(data)
     # 分析json数据串，定向的获取到相应的解释信息
     # 首先打印出单词的简单含义
-    print "\nResult:"
-    print data['trans_result']['data'][0]['dst']
+    print("\nResult:")
+    print(data['trans_result']['data'][0]['dst'])
 
 
 
